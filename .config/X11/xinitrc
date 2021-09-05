@@ -1,0 +1,64 @@
+#!/bin/sh
+
+# start the scripts in xinitrc.d
+if [ -d '/etc/X11/xinit/xinitrc.d' ]
+then
+	for f in '/etc/X11/xinit/xinitrc.d/?*.sh'
+	do
+		[ -x "$f" ] && . "$f"
+	done
+	unset f
+fi
+
+# load Xresources
+[ -f ${XDG_CONFIG_HOME:-$HOME/.config}/X11/Xresources ] && xrdb -merge -I$HOME ${XDG_CONFIG_HOME:-$HOME/.config}/X11/Xresources
+
+# keyrings
+[ -d ${XDG_DATA_HOME:-$HOME/.local/share}/keyrings ] || mkdir -p ${XDG_DATA_HOME:-$HOME/.local/share}/keyrings
+source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
+
+# polkit
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
+
+# Keyboard Layout
+setxkbmap de T3 &
+
+# start the compositor
+picom -f &
+
+# start blueman applet
+blueman-applet &
+
+# wallpaper/background
+# xwallpaper --zoom "${XDG_CONFIG_HOME:-$HOME/.config}/wallpaper" &
+hsetroot -solid '#1d2021' &
+
+# redshift
+redshift -O 4500
+
+# start dunst
+dunst &
+
+# start dwmblocks
+dwmblocks &
+
+# enable automatic locking
+xautolock -time 5 -locker slock -corners 00-- &
+
+# remove the mouse when idle
+unclutter &
+
+# set character repeatition rate
+xset r rate 300 50 &
+
+# start pipewire (~/.local/bin/scripts/pipewire/pipewire-start)
+pipewire-start
+
+# start dwm
+while true
+do
+	dbus-launch dwm
+done
+exec dbus-launch dwm

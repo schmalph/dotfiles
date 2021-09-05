@@ -1,0 +1,198 @@
+/*  				*/
+/*  	COLORS 		*/
+/*  				*/
+
+/* MAIN COLOR SCHEME */
+
+! gruvbox
+#define GRUVBOX_BLACK 		#1d2021
+#define GRUVBOX_RED 		#cc241d
+#define GRUVBOX_GREEN 		#98971a
+#define GRUVBOX_YELLOW 		#d79921
+#define GRUVBOX_BLUE 		#458588
+#define GRUVBOX_MAGENTA 	#b16286
+#define GRUVBOX_CYAN 		#689d6a
+#define GRUVBOX_GRAY 		#a89984
+
+#define GRUVBOX_LBLACK 		#928374
+#define GRUVBOX_LRED 		#fb4934
+#define GRUVBOX_LGREEN 		#b8bb26
+#define GRUVBOX_LYELLOW 	#fabd2f
+#define GRUVBOX_LBLUE 		#83a598
+#define GRUVBOX_LMAGENTA 	#d3869b
+#define GRUVBOX_LCYAN 		#8ec07c
+#define GRUVBOX_WHITE 		#ebdbb2
+
+#define GRUVBOX_DARK0 		#1d2021
+#define GRUVBOX_DARK1 		#282828
+#define GRUVBOX_DARK2 		#32302f
+#define GRUVBOX_DARK3 		#3c3836
+#define GRUVBOX_DARK4 		#504945
+#define GRUVBOX_DARK5 		#665c54
+#define GRUVBOX_DARK6 		#7c6f64
+#define GRUVBOX_DARK7 		#928374
+
+#define GRUVBOX_LIGHT0 		#fbf1c7
+#define GRUVBOX_LIGHT1 		#ebdbb2
+#define GRUVBOX_LIGHT2 		#d5c4a1
+#define GRUVBOX_LIGHT3 		#bdae93
+#define GRUVBOX_LIGHT4 		#a89984
+
+#define GRUVBOX_BACKGROUND 	GRUVBOX_DARK1
+#define GRUVBOX_FOREGROUND 	GRUVBOX_LIGHT1
+
+#define GRUVBOX_ORANGE 		#d67d0e
+#define GRUVBOX_LORANGE 	#fe8019
+
+
+/* Specific colors */
+#define COL_RED				#ff0000
+#define COL_BLACK 			#000000
+#define COL_WHITE 			#ffffff
+
+/* THEME */
+#define THEME_DARK_1 		GRUVBOX_BACKGROUND
+#define THEME_DARK_2		GRUVBOX_DARK0
+#define THEME_DARK_3	 	GRUVBOX_DARK7
+
+#define THEME_LIGHT_1		GRUVBOX_BLUE
+#define THEME_LIGHT_2		GRUVBOX_FOREGROUND
+#define THEME_LIGHT_3		GRUVBOX_LIGHT5
+
+
+/* TERMINAL COLORS */
+#define COL_TM_0 			GRUVBOX_BLACK
+#define COL_TM_1 			GRUVBOX_RED
+#define COL_TM_2 			GRUVBOX_GREEN
+#define COL_TM_3 			GRUVBOX_YELLOW
+#define COL_TM_4 			GRUVBOX_BLUE
+#define COL_TM_5 			GRUVBOX_MAGENTA
+#define COL_TM_6 			GRUVBOX_CYAN
+#define COL_TM_7 			GRUVBOX_GRAY
+
+#define COL_TM_8 			GRUVBOX_LBLACK
+#define COL_TM_9 			GRUVBOX_LRED
+#define COL_TM_10 			GRUVBOX_LGREEN
+#define COL_TM_11 			GRUVBOX_LYELLOW
+#define COL_TM_12 			GRUVBOX_LBLUE
+#define COL_TM_13 			GRUVBOX_LMAGENTA
+#define COL_TM_14 			GRUVBOX_LCYAN
+#define COL_TM_15 			GRUVBOX_WHITE
+
+#define COL_TM_BG 			GRUVBOX_BACKGROUND
+#define COL_TM_FG 			GRUVBOX_FOREGROUND
+
+
+
+/*  				*/
+/*  	FONTS 		*/
+/*  				*/
+
+
+#define FONT_MN JetBrains Mono:size=13
+#define FONT_TM JetBrains Mono:pixelsize=13:antialias=true:autohint=true
+
+
+/* 						*/
+/* 		SET VALUES 		*/
+/* 						*/
+
+! standard colors
+*.color0: GRUVBOX_BLACK
+*.color1: GRUVBOX_RED
+*.color2: GRUVBOX_GREEN
+*.color3: GRUVBOX_YELLOW
+*.color4: GRUVBOX_BLUE
+*.color5: GRUVBOX_MAGENTA
+*.color6: GRUVBOX_CYAN
+*.color7: GRUVBOX_GRAY
+*.color8: GRUVBOX_LBLACK
+*.color9: GRUVBOX_LRED
+*.color10: GRUVBOX_LGREEN
+*.color11: GRUVBOX_LYELLOW
+*.color12: GRUVBOX_LBLUE
+*.color13: GRUVBOX_LMAGENTA
+*.color14: GRUVBOX_LCYAN
+*.color15: GRUVBOX_WHITE
+
+*.background: GRUVBOX_BACKGROUND
+*.foreground: GRUVBOX_FOREGROUND
+
+
+! Xft
+Xft.autohint: 0
+Xft.hintstyle: hintslight
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
+! dwm
+dwm.normbordercolor: THEME_LIGHT_1
+dwm.selbordercolor: THEME_LIGHT_2
+dwm.normbgcolor: THEME_DARK_1
+dwm.selbgcolor: THEME_DARK_1
+dwm.normfgcolor: THEME_LIGHT_1
+dwm.selfgcolor: THEME_LIGHT_2
+dwm.borderpx: 2
+dwm.snap: 32
+dwm.showbar: 1
+dwm.topbar: 0
+dwm.nmaster: 1
+dwm.resizehints: 1
+dwm.mfact: 0.55
+dwm.mainfont: FONT_MN
+dwm.gappx: 5
+
+! st
+st.font: FONT_TM
+st.color0: COL_TM_0
+st.color1: COL_TM_1
+st.color2: COL_TM_2
+st.color3: COL_TM_3
+st.color4: COL_TM_4
+st.color5: COL_TM_5
+st.color6: COL_TM_6
+st.color7: COL_TM_7
+st.color8: COL_TM_8
+st.color9: COL_TM_9
+st.color10: COL_TM_10
+st.color11: COL_TM_11
+st.color12: COL_TM_12
+st.color13: COL_TM_13
+st.color14: COL_TM_14
+st.color15: COL_TM_15
+st.background: COL_TM_BG
+st.foreground: COL_TM_FG
+st.cursorColor: COL_TM_FG
+st.minlatency: 8
+st.maxlatency: 33
+st.blinktimeout: 800
+st.bellvolume: 0
+st.tabspaces: 4
+st.borderpx: 2
+st.cwscale: 1.0
+st.chscale: 1.0
+
+! dmenu
+dmenu.font: FONT_MN
+dmenu.background: THEME_DARK_1
+dmenu.foreground: THEME_LIGHT_1
+dmenu.selbackground: THEME_LIGHT_1
+dmenu.selforeground: THEME_LIGHT_2
+
+! slock
+slock.colorBackground: GRUVBOX_DARK1
+slock.colorInit: COL_BLACK
+slock.colorInput: GRUVBOX_GREEN
+slock.colorFailed: GRUVBOX_RED
+slock.colorCaps: GRUVBOX_WHITE
+
+! dwmblocks
+dwmblocks.tagcolor: THEME_LIGHT_2
+dwmblocks.hostanduser_col: THEME_DARK_3
+dwmblocks.keyboard_layout_col: GRUVBOX_LGREEN
+dwmblocks.network_col: GRUVBOX_YELLOW
+dwmblocks.volume_col: GRUVBOX_RED
+dwmblocks.memory_col: GRUVBOX_MAGENTA
+dwmblocks.date_col: GRUVBOX_LCYAN
+dwmblocks.battery_col: GRUVBOX_ORANGE

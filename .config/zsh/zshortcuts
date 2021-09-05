@@ -1,0 +1,20 @@
+#!/bin/zsh
+
+# disable <c-s> and <c-q>
+stty stop undef
+stty start undef
+
+# edit the current command in vim with <c-e>
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^e' edit-command-line
+
+# bind del key
+bindkey '^[[3~' delete-char
+bindkey -a '^[[3~' delete-char
+
+# go in home directory with <c-space>
+bindkey -s '^ ' '^ucd&&clear\n'
+
+# paru system update with <c-p>
+bindkey -s '^p' '^uparu\n'

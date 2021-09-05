@@ -1,0 +1,6 @@
+{
+	"coc.preferences.formatOnSaveFiletypes": ["js", "jsx"],
+	"snippets.ultisnips.directories": ["snippets"],
+	"snippets.snipmate.enable": false,
+	"snippets.loadFromExtensions": false
+}

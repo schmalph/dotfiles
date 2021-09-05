@@ -1,0 +1,98 @@
+#!/bin/sh
+
+# abbreviations
+alias nv='nvim'
+alias pa='paru'
+alias zat='zathura'
+alias pm='pulsemixer'
+
+# update
+alias upd='paru -Syyu --devel --noconfirm; paru -c --noconfirm; paru -Sc --noconfirm'
+alias refl='sudo reflector --country Germany --protocol https --latest 30 --age 12 --sort rate --save /etc/pacman.d/mirrorlist --verbose'
+
+# ls
+alias exa='exa --group-directories-first'
+alias ls='exa'
+alias la='ls -a'
+alias l='ls -1a'
+alias ll='ls -la'
+alias lt='ls -T'
+alias lat='ls -Ta'
+
+# cd
+alias cd..='cd ..'
+alias cd...='cd ../..'
+alias cd....='cd ../../..'
+alias cd.....='cd ../../../..'
+
+# grep
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+# standard commands
+alias cp="cp --interactive --verbose"
+alias mv="mv --interactive --verbose"
+alias rm="rm --interactive=once --verbose"
+alias rmdir="rmdir --verbose"
+alias mkdir="mkdir --parents --verbose"
+
+mkdirg () {
+	mkdir $1
+	cd $1
+}
+
+# ping test
+alias tping='ping archlinux.org'
+
+# git
+alias g='git'
+alias gad='git add'
+alias grm='git rm'
+alias gcm='git commit'
+alias gst='git status'
+alias gps='git push'
+alias gpl='git pull'
+alias glg='git log'
+alias gbr='git branch'
+alias gco='git checkout'
+alias gmg='git merge'
+alias grt='git reset'
+alias grs='git restore'
+alias grss='git restore --staged'
+alias gcl='git clone'
+alias gdf='git diff'
+
+# dotfiles
+alias dg="git --git-dir=${XDG_DATA_HOME:-$HOME/.local/share}/dotfiles/ --work-tree=$HOME"
+alias dgad='dg add'
+alias dgrm='dg rm'
+alias dgcm='dg commit'
+alias dgst='dg status'
+alias dgps='dg push'
+alias dgpl='dg pull'
+alias dglg='dg log'
+alias dgbr='dg branch'
+alias dgco='dg checkout'
+alias dgmg='dg merge'
+alias dgrt='dg reset'
+alias dgrs='dg restore'
+alias dgrss='dg restore --staged'
+alias dgdf='dg diff'
+
+# suckless
+alias slrcp='sudo cp config.def.h config.h && sudo make clean install; sudo make clean'
+alias sldc="$EDITOR config.def.h"
+
+# calculator
+alias bc='bc -ql'
+alias calc='bc'
+
+# calendar
+alias cal='cal -m'
+
+# LaTeX templates
+alias texdocmain="cp $HOME/templ/LaTeX/doc/main.tex ."
+
+# paru fuzzy search
+alias parufzf="paru -Sl | awk '{print \$2(\$4==\"\" ? \"\" : \" *\")}' | fzf --multi --preview 'paru -Si {1}' | cut -d \" \" -f 1 | xargs -ro paru -S"
