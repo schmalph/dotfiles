@@ -11,3 +11,6 @@ vicmd_symbol = "[V>](bold yellow)"
 
 [directory]
 read_only = " <read-only>"
+
+[rust]
+symbol = "R "

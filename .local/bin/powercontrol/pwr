@@ -1,0 +1,27 @@
+#!/bin/sh
+
+case "$1" in
+	'poweroff'|'p'|'off')
+		echo 'poweroff'
+		poweroff
+		;;
+	'reboot'|'r')
+		echo 'reboot'
+		reboot
+		;;
+	'sleep'|'zzz'|'z')
+		echo 'sleep'
+		systemctl suspend
+		;;
+	'zlock'|'zl')
+		echo 'sleep & lock'
+		systemctl suspend && slock
+		;;
+	'ask')
+		action=$(printf "zlock\npoweroff\nreboot\nsleep" | dmenu -p 'powerctl')
+		pwr "$action"
+		;;
+	*)
+		echo 'specify action [poweroff/reboot/sleep/zlock]'
+		;;
+esac
